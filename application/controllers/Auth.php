@@ -31,4 +31,8 @@ class Auth extends MY_AUTH_Controller {
         $this->load->view('login_form', $data);
     }
 
+    public function logout(){
+        $this->session->set_userdata(Array('logged_in'=>false, "user"=>Array()));
+        redirect('Welcome/index');
+    }
 }
